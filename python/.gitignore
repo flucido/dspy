@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# uv / lock
+uv.lock
+
+# Envs
+.env
+.env.*
+
+# Coverage
+htmlcov/
+.coverage*
+.pytest_cache/
