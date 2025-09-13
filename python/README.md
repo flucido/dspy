@@ -82,6 +82,26 @@ print(resp.text)
 PY
 ```
 
+## Review summary
+Installed and verified (import/version):
+- numpy==1.26.x, pandas==2.1.4 (ABI-compatible), polars, pyarrow, duckdb, SQLAlchemy 1.4.x, great-expectations, dagster, airflow 2.10.x, dbt (cli), supabase, jupyter, matplotlib, seaborn, plotly, scikit-learn
+
+Key compatibility notes:
+- Great Expectations requires pandas<=2.1.x → pandas extra locked to 2.1.4
+- Airflow requires SQLAlchemy<2 → de extra uses SQLAlchemy 1.4.x
+- Altair conflicts with GE; installed via separate altair extra if desired
+- NumPy pinned to 1.26.x for pandas/scikit-learn ABI compatibility on Python 3.12
+
+Useful verification command:
+```
+python - <<'PY'
+import importlib
+for m in ['numpy','pandas','polars','pyarrow','duckdb','sqlalchemy','great_expectations','dagster','airflow','dbt','supabase','jupyter','matplotlib','seaborn','plotly','sklearn']:
+    mod=importlib.import_module(m)
+    print(m, getattr(mod,'__version__','unknown'))
+PY
+```
+
 ## Notes
 - Core libraries: numpy, polars, pyarrow, requests
 - Data engineering: duckdb, SQLAlchemy, psycopg2-binary, alembic

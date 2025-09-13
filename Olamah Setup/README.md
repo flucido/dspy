@@ -37,6 +37,7 @@ This README documents a clean, service-based install of Ollama on macOS with App
 ## Host configuration
 - Default (local):
   - OLLAMA_HOST is set in your shell config to `127.0.0.1:11434`.
+  - Current configured host in ~/.zshrc: 127.0.0.1:11434
   - You can change it to a remote host/port if you deploy Ollama elsewhere.
 - To check the current host in your shell:
   ```bash
@@ -44,7 +45,7 @@ This README documents a clean, service-based install of Ollama on macOS with App
   ```
 - To use a different host for a single command:
   ```bash
-  OLLAMA_HOST=10.0.0.5:11434 ollama list
+  OLLAMA_HOST=127.0.0.1:11434 ollama list
   ```
 
 ## Hiding thinking output

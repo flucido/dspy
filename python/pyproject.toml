@@ -5,7 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "numpy>=2.0.0",
+    "numpy>=1.26,<2",
     "polars>=1.6.0",
     "pyarrow>=17.0.0",
     "requests>=2.32.3",
@@ -22,7 +22,7 @@ de = [
 
 # Pandas stack (optional if you prefer just Polars)
 pandas = [
-    "pandas>=1.5.0,<=2.1.4",
+    "pandas==2.1.4",
     "openpyxl>=3.1.5",
 ]
 
