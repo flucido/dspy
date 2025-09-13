@@ -15,14 +15,14 @@ dependencies = [
 # Data engineering: databases, ETL helpers
 de = [
     "duckdb>=1.1.3",
-    "SQLAlchemy>=2.0.35",
+    "SQLAlchemy>=1.4.36,<2.0",
     "psycopg2-binary>=2.9.9",
     "alembic>=1.13.2",
 ]
 
 # Pandas stack (optional if you prefer just Polars)
 pandas = [
-    "pandas>=2.2.3",
+    "pandas>=1.5.0,<=2.1.4",
     "openpyxl>=3.1.5",
 ]
 
@@ -79,11 +79,15 @@ genai = [
     "pydantic>=2.9.2",
 ]
 
-# Orchestration
+# Orchestration (Dagster only)
 orchestration = [
     "dagster>=1.9.0",
     "dagster-webserver>=1.9.0",
-    "prefect>=3.0.0",
+]
+
+# Airflow (install with constraints if needed)
+airflow = [
+    "apache-airflow==2.10.2",
 ]
 
 # Data transformation (dbt)
@@ -91,6 +95,8 @@ transform = [
     "dbt-core>=1.8.7",
     "dbt-bigquery>=1.8.3",
     "dbt-postgres>=1.8.3",
+    "dbt-snowflake>=1.8.4",
+    "dbt-redshift>=1.8.1",
 ]
 
 # Data quality
@@ -128,6 +134,11 @@ notebook_polish = [
     "jupytext>=1.16.4",
     "nbqa>=1.9.1,<1.9.2",
     "pre-commit>=4.0.1",
+]
+
+# Supabase client
+supabase = [
+    "supabase>=2.6.0",
 ]
 
 [tool.black]

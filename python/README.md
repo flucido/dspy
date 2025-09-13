@@ -33,6 +33,22 @@ Install only what you need, for example:
 
 ```
 uv sync -E notebooks -E viz -E de -E pandas -E cloud -E genai -E ml
+uv sync -E orchestration -E transform -E streaming -E go -E timeseries -E performance -E notebook_polish
+# Great Expectations (vq) requires pandas<=2.1.4; this project already constrains pandas extra accordingly.
+uv sync -E vq
+# Altair is optional and is split to avoid conflicts with vq; install separately if you want it.
+uv sync -E altair
+# Airflow is heavy; if resolution fails, install with provider constraints (see below)
+uv sync -E airflow
+```
+
+### Airflow install note
+Airflow often requires constraints to pin providers. If the extra fails to resolve, try:
+
+```
+# Example for Python 3.12; confirm the constraints URL for your Airflow version
+CONSTRAINTS_URL=https://raw.githubusercontent.com/apache/airflow/constraints-2.10.2/constraints-3.12.txt
+uv pip install --constraint "$CONSTRAINTS_URL" apache-airflow==2.10.2
 ```
 
 ## Linting and tests
@@ -45,7 +61,7 @@ pytest
 
 ## Configure Google Gemini
 1) Obtain an API key from Google AI Studio.
-2) Store it as an environment variable in your shell startup or a dotenv file (do not commit secrets):
+2) Store it as an environment variable in your shell startup or a dotenv file (do not commit secrets). You can copy `.env.example` to `.env` and fill values:
 
 ```
 export GEMINI_API_KEY={{GEMINI_API_KEY}}
