@@ -1,0 +1,7 @@
+{
+    "workbench.editor.autoLockGroups": {
+        "workbench.editorinputs.searchEditorInput": true,
+        "default": true,
+        "repl": true
+    }
+}

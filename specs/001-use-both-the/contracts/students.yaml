@@ -1,0 +1,11 @@
+openapi: 3.0.0
+info:
+  title: Students API
+  version: 1.0.0
+paths:
+  /students:
+    get:
+      summary: Retrieve student data
+      responses:
+        '200':
+          description: List of student data

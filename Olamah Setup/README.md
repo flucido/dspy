@@ -9,7 +9,7 @@ This README documents a clean, service-based install of Ollama on macOS with App
 - Default host: `127.0.0.1:11434` (configurable)
 - Thinking output: hidden by default via `olrun` alias
 - Models installed: `qwen3:latest` (only)
-- Aliases: `OL` (for `ollama`), `olrun` (for `ollama run --hidethinking`)
+- Shortcuts: alias `OL` (for `ollama`), function `olrun` (runs `ollama run` with `--hidethinking` by default)
 
 ## Install steps performed
 1. Install Ollama via Homebrew:
@@ -49,19 +49,22 @@ This README documents a clean, service-based install of Ollama on macOS with App
   ```
 
 ## Hiding thinking output
-- Use the `olrun` alias to hide thinking output by default:
+- Use the `olrun` function to hide thinking output by default:
   ```bash
   olrun MODEL "Your prompt"
   ```
-  This expands to:
+  Behavior:
+  - If you already provided `--hidethinking`, it will not be duplicated.
+  - Otherwise, `--hidethinking` is added for you.
+  Under the hood it effectively runs:
   ```bash
   ollama run --hidethinking MODEL "Your prompt"
   ```
 - If a model doesn’t support thinking output, the flag is harmless.
 
-## Aliases added
-- `OL` → `ollama`
-- `olrun` → `ollama run --hidethinking`
+## Shortcuts added
+- Alias: `OL` → `ollama`
+- Function: `olrun` → runs `ollama run` and adds `--hidethinking` unless you already supplied it
 
 These are appended to `~/.zshrc` inside a clearly marked block so they are easy to find and edit.
 
