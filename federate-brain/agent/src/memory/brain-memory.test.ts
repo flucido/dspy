@@ -94,11 +94,38 @@ describe('BrainMemory', () => {
 
             await expect(brainMemory.getLatestBriefing(account)).rejects.toThrow(mockError);
         });
-        it('should throw an error for unimplemented getChatHistory', async () => {
-            const chatId = 'test-chat';
-            // Expect an error because the mock implementation will return a string,
-            // but we expect a more robust implementation.
-            await expect(brainMemory.getChatHistory(chatId)).rejects.toThrow();
+    });
+    describe('getChatHistory', () => {
+        it('should read chat history if the file exists', async () => {
+            const chatId = 'gemini-export-2025-12-28';
+            const chatContent = '# Chat Log\nUser: Hello\nAgent: Hi';
+            mockAccess.mockResolvedValue(undefined);
+            mockReadFile.mockResolvedValue(chatContent);
+
+            const result = await brainMemory.getChatHistory(chatId);
+
+            expect(mockAccess).toHaveBeenCalledWith(`${knowledgePath}/chats/${chatId}.md`);
+            expect(mockReadFile).toHaveBeenCalledWith(`${knowledgePath}/chats/${chatId}.md`, 'utf-8');
+            expect(result).toBe(chatContent);
+        });
+
+        it('should return empty string if chat history file does not exist', async () => {
+            const chatId = 'non-existent-chat';
+            mockAccess.mockRejectedValue({ code: 'ENOENT' });
+
+            const result = await brainMemory.getChatHistory(chatId);
+
+            expect(mockAccess).toHaveBeenCalledWith(`${knowledgePath}/chats/${chatId}.md`);
+            expect(mockReadFile).not.toHaveBeenCalled();
+            expect(result).toBe('');
+        });
+
+        it('should throw other errors from fs.access', async () => {
+            const chatId = 'error-chat';
+            const mockError = new Error('Permission denied');
+            mockAccess.mockRejectedValue(mockError);
+
+            await expect(brainMemory.getChatHistory(chatId)).rejects.toThrow(mockError);
         });
     });
 });

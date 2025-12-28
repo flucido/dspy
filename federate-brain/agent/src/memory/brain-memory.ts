@@ -28,8 +28,17 @@ export class BrainMemory {
     }
 
     async getChatHistory(chatId: string): Promise<string> {
-        // Placeholder for chat history retrieval
-        return `Chat history for ${chatId}`;
+        const chatPath = `${this.knowledgePath}/chats/${chatId}.md`;
+        try {
+            await fs.access(chatPath);
+            return fs.readFile(chatPath, 'utf-8');
+        } catch (error: any) {
+            if (error.code === 'ENOENT') {
+                return '';
+            } else {
+                throw error;
+            }
+        }
     }
 
     async getLatestBriefing(account: string = "personal"): Promise<DailyBriefing | undefined> {

@@ -35,15 +35,15 @@ This plan outlines the steps to build the core ADK agent, integrate it with Goog
     - [x] Subtask: Write Failing Tests for reading life-ops daily briefings (2492adb)
     - [x] Subtask: Implement memory manager to read life-ops context (2492adb)
     - [x] Subtask: Write Failing Tests for reading chat history (0244799)
-    - [ ] Subtask: Implement memory manager to read chat context
-- [ ] Task: Implement Agent State Persistence
+    - [x] Subtask: Implement memory manager to read chat context (8cb0f91)
+- [~] Task: Implement Agent State Persistence
     - [ ] Subtask: Write Failing Tests for agent state storage and retrieval
     - [ ] Subtask: Implement state manager to use Docker volume for persistence
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Agent Memory and Knowledge Base' (Protocol in workflow.md)
 
 ## Phase 4: Next.js Frontend Development
 
-- [ ] Task: Build basic Next.js application structure
+- [~] Task: Build basic Next.js application structure
     - [ ] Subtask: Write Failing Tests for Next.js app initialization
     - [ ] Subtask: Implement Next.js project setup with CopilotKit integration
 - [ ] Task: Implement Agent Chat Interface
