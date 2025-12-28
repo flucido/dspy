@@ -1,0 +1,8 @@
+{
+  "track_id": "build_core_adk_agent_20251228",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2025-12-28T00:00:00Z",
+  "updated_at": "2025-12-28T00:00:00Z",
+  "description": "Build the core ADK agent with Google Workspace Calendar and Task management integration, and a basic Next.js frontend chat interface, leveraging Ollama for local LLM inference."
+}
