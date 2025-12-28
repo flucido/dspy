@@ -27,6 +27,11 @@ export class BrainMemory {
         return `Mock context for query: ${query}`;
     }
 
+    async getChatHistory(chatId: string): Promise<string> {
+        // Placeholder for chat history retrieval
+        return `Chat history for ${chatId}`;
+    }
+
     async getLatestBriefing(account: string = "personal"): Promise<DailyBriefing | undefined> {
         const dirPath = `${this.knowledgePath}/life-ops/${account}`;
         let files: string[] = [];

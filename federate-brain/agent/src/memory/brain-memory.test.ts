@@ -94,5 +94,11 @@ describe('BrainMemory', () => {
 
             await expect(brainMemory.getLatestBriefing(account)).rejects.toThrow(mockError);
         });
+        it('should throw an error for unimplemented getChatHistory', async () => {
+            const chatId = 'test-chat';
+            // Expect an error because the mock implementation will return a string,
+            // but we expect a more robust implementation.
+            await expect(brainMemory.getChatHistory(chatId)).rejects.toThrow();
+        });
     });
 });
