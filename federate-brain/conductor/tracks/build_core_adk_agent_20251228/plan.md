@@ -7,7 +7,7 @@ This plan outlines the steps to build the core ADK agent, integrate it with Goog
 - [x] Task: Set up Docker development environment and project structure (6f6911c)
     - [ ] Subtask: Create `legacy/` directory and draft `legacy/README.md`
     - [ ] Subtask: Create Docker skeleton for `agent/`, `frontend/`, `secrets/`, `docker-compose.yml`, and `.env.example`
-- [ ] Task: Research ADK/CopilotKit and Ollama integration
+- [x] Task: Research ADK/CopilotKit and Ollama integration (f673f32)
     - [ ] Subtask: Clarify "ADK SDK" terminology and review CopilotKit documentation
     - [ ] Subtask: Test CopilotKit + Ollama compatibility
     - [ ] Subtask: Prototype simple agent with function calling
