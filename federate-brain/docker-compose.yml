@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  agent:
+    build: ./agent
+    container_name: federated-brain-agent
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/secrets/gcloud-auth.json
+      - GITHUB_TOKEN_FILE=/secrets/github-token
+      - OLLAMA_HOST=ollama:11434
+      - KNOWLEDGE_PATH=/mnt/knowledge
+    volumes:
+      - ./my-code-brain/knowledge:/mnt/knowledge:ro
+      - agent-state:/app/state
+      - ./secrets:/secrets:ro
+      - logs:/app/logs
+    networks:
+      - brain-network
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    volumes:
+      - ollama-models:/root/.ollama
+    networks:
+      - brain-network
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: brain-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - AGENT_API_URL=http://agent:8000
+      - NEXT_PUBLIC_WS_URL=ws://agent:8000/ws
+    networks:
+      - brain-network
+    depends_on:
+      - agent
+    restart: unless-stopped
+
+volumes:
+  agent-state:
+  ollama-models:
+  logs:
+
+networks:
+  brain-network:
+    driver: bridge
