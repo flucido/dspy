@@ -1,0 +1,17 @@
+{
+  "name": "federate-brain",
+  "version": "1.0.0",
+  "description": "Agent-driven home operating system",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "@types/jest": "^29.5.12"
+  }
+}
