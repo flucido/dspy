@@ -2,7 +2,7 @@
 
 This plan outlines the steps to build the core ADK agent, integrate it with Google Workspace for Calendar and Task management, and develop a basic Next.js frontend with a chat interface, utilizing Ollama for local LLM inference.
 
-## Phase 1: Agent Core and Local LLM Setup
+## Phase 1: Agent Core and Local LLM Setup [checkpoint: 047b496]
 
 - [x] Task: Set up Docker development environment and project structure (6f6911c)
     - [ ] Subtask: Create `legacy/` directory and draft `legacy/README.md`
