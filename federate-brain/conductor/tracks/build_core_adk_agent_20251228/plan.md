@@ -15,7 +15,7 @@ This plan outlines the steps to build the core ADK agent, integrate it with Goog
 
 ## Phase 2: Google Workspace Integration (Calendar & Tasks)
 
-- [ ] Task: Implement Google Workspace Function Calling Layer
+- [x] Task: Implement Google Workspace Function Calling Layer (37b7131)
     - [ ] Subtask: Write Failing Tests for Calendar API functions (list, create, detect conflicts)
     - [ ] Subtask: Implement Calendar API function handlers
     - [ ] Subtask: Write Failing Tests for Tasks API functions (list, create, complete)
