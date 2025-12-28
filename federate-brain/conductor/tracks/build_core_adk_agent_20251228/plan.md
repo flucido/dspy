@@ -4,7 +4,7 @@ This plan outlines the steps to build the core ADK agent, integrate it with Goog
 
 ## Phase 1: Agent Core and Local LLM Setup
 
-- [ ] Task: Set up Docker development environment and project structure
+- [x] Task: Set up Docker development environment and project structure (6f6911c)
     - [ ] Subtask: Create `legacy/` directory and draft `legacy/README.md`
     - [ ] Subtask: Create Docker skeleton for `agent/`, `frontend/`, `secrets/`, `docker-compose.yml`, and `.env.example`
 - [ ] Task: Research ADK/CopilotKit and Ollama integration
