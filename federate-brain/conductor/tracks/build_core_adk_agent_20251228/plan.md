@@ -20,7 +20,7 @@ This plan outlines the steps to build the core ADK agent, integrate it with Goog
     - [ ] Subtask: Implement Calendar API function handlers
     - [ ] Subtask: Write Failing Tests for Tasks API functions (list, create, complete)
     - [ ] Subtask: Implement Tasks API function handlers
-- [ ] Task: Integrate Google Workspace tools into Agent Configuration
+- [x] Task: Integrate Google Workspace tools into Agent Configuration (6ff9843)
     - [ ] Subtask: Write Failing Tests for agent tool integration with Google Calendar
     - [ ] Subtask: Implement agent configuration with Google Calendar tools
     - [ ] Subtask: Write Failing Tests for agent tool integration with Google Tasks
