@@ -13,7 +13,7 @@ This plan outlines the steps to build the core ADK agent, integrate it with Goog
     - [ ] Subtask: Prototype simple agent with function calling
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Agent Core and Local LLM Setup' (Protocol in workflow.md)
 
-## Phase 2: Google Workspace Integration (Calendar & Tasks)
+## Phase 2: Google Workspace Integration (Calendar & Tasks) [checkpoint: 3b7e694]
 
 - [x] Task: Implement Google Workspace Function Calling Layer (37b7131)
     - [ ] Subtask: Write Failing Tests for Calendar API functions (list, create, detect conflicts)
