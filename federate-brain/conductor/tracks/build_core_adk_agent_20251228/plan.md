@@ -29,8 +29,8 @@ This plan outlines the steps to build the core ADK agent, integrate it with Goog
 
 ## Phase 3: Agent Memory and Knowledge Base
 
-- [ ] Task: Mount `my-code-brain/knowledge` as a read-only volume
-    - [ ] Subtask: Write Failing Tests for reading codebase XML and Markdown digests
+- [~] Task: Mount `my-code-brain/knowledge` as a read-only volume
+    - [x] Subtask: Write Failing Tests for reading codebase XML and Markdown digests (a602c12)
     - [ ] Subtask: Implement memory manager to read codebase context
     - [ ] Subtask: Write Failing Tests for reading life-ops daily briefings
     - [ ] Subtask: Implement memory manager to read life-ops context
