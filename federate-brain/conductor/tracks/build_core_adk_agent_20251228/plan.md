@@ -36,9 +36,9 @@ This plan outlines the steps to build the core ADK agent, integrate it with Goog
     - [x] Subtask: Implement memory manager to read life-ops context (2492adb)
     - [x] Subtask: Write Failing Tests for reading chat history (0244799)
     - [x] Subtask: Implement memory manager to read chat context (8cb0f91)
-- [~] Task: Implement Agent State Persistence
-    - [ ] Subtask: Write Failing Tests for agent state storage and retrieval
-    - [ ] Subtask: Implement state manager to use Docker volume for persistence
+- [x] Task: Implement Agent State Persistence (942bbf9)
+    - [x] Subtask: Write Failing Tests for agent state storage and retrieval (942bbf9)
+    - [x] Subtask: Implement state manager to use Docker volume for persistence (942bbf9)
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Agent Memory and Knowledge Base' (Protocol in workflow.md)
 
 ## Phase 4: Next.js Frontend Development
