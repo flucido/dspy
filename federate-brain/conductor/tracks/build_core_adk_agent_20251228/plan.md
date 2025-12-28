@@ -34,7 +34,7 @@ This plan outlines the steps to build the core ADK agent, integrate it with Goog
     - [x] Subtask: Implement memory manager to read codebase context (2492adb)
     - [x] Subtask: Write Failing Tests for reading life-ops daily briefings (2492adb)
     - [x] Subtask: Implement memory manager to read life-ops context (2492adb)
-    - [ ] Subtask: Write Failing Tests for reading chat history
+    - [x] Subtask: Write Failing Tests for reading chat history (0244799)
     - [ ] Subtask: Implement memory manager to read chat context
 - [ ] Task: Implement Agent State Persistence
     - [ ] Subtask: Write Failing Tests for agent state storage and retrieval
