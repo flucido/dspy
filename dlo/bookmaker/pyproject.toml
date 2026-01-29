@@ -1,0 +1,68 @@
+[project]
+name = "oxturn"
+version = "0.1.0"
+description = "Boustrophedon text transformation engine - alternating-direction text for focused reading"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Dr. Ogren Apps" }]
+keywords = ["boustrophedon", "reading", "pdf", "epub", "education"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Education",
+    "Topic :: Text Processing",
+]
+
+dependencies = [
+    "reportlab>=4.0",
+    "ebooklib>=0.18",
+    "typer>=0.9",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+nlp = [
+    "spacy>=3.7",
+]
+api = [
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "python-multipart>=0.0.6",
+    "pypdf>=4.0.0",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1",
+    "mypy>=1.8",
+]
+all = ["oxturn[nlp,api,dev]"]
+
+[project.scripts]
+oxturn = "oxturn.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["oxturn"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --cov=oxturn --cov-report=term-missing"
